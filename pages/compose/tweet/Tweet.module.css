@@ -1,0 +1,14 @@
+.textarea {
+  border: 0;
+  padding: 15px;
+  outline: 0;
+  resize: none;
+  font-size: 21px;
+  width: 100%;
+}
+
+.div {
+  padding: 15px;
+}
+
+

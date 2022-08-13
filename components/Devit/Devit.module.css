@@ -1,0 +1,19 @@
+.article {
+  border-bottom: 2px solid #eee;
+  display: flex;
+  padding: 10px 15px;
+}
+
+.div {
+  line-height: 1.3125;
+  padding-right: 10px;
+}
+
+.p {
+  margin: 0;
+}
+
+.date {
+  color: #555;
+  font-size: 14px;
+}
