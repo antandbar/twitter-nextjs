@@ -6,8 +6,9 @@ import {
   orderBy,
   getDocs,
   Timestamp,
-  addDoc,
+  addDoc
 } from 'firebase/firestore';
+import { getStorage, ref, uploadBytesResumable } from "firebase/storage";
 import { getAuth, GithubAuthProvider, signInWithPopup } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -52,10 +53,11 @@ export const loginWhitGithub = () => {
   });
 };
 
-export const addDevit = ({ avatar, content, userId, userName }) => {
+export const addDevit = ({ avatar, content, img, userId, userName }) => {
   return addDoc(collection(db, 'devits'), {
     avatar,
     content,
+    img,
     userId,
     userName,
     createdAt: Timestamp.fromDate(new Date()),
@@ -78,3 +80,13 @@ export const fetchLatestDevits = async () => {
   });
   return data;
 };
+
+export const uploadImage = (file) => {
+  const app = initializeApp(firebaseConfig);
+  const storage = getStorage(app);
+  const storageRef = ref(storage, `images/${file.name}`);
+  const uploadTask = uploadBytesResumable(storageRef, file);
+  return uploadTask;
+};  
+
+

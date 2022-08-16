@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import AppLayout from '../../components/appLayout';
 import styles from './Timeline.module.css';
 
 const Timeline = ({ userName }) => {
   return (
-    <AppLayout>
+    <>
       <h1 className={styles.title}>This is the Timeline of {userName}</h1>
       <Link href={'/'}>
         <a>Go home</a>
@@ -13,7 +12,7 @@ const Timeline = ({ userName }) => {
   h1{
     color: red;
   }`}</style> */}
-    </AppLayout>
+    </>
   );
 };
 

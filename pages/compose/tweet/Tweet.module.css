@@ -1,5 +1,19 @@
+.form {
+  margin: 10px;
+}
 .textarea {
-  border: 0;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  padding: 15px;
+  outline: 0;
+  resize: none;
+  font-size: 21px;
+  width: 100%;
+}
+
+.textareaDragOver {
+  border: 3px dashed #09f;
+  border-radius: 10px;
   padding: 15px;
   outline: 0;
   resize: none;
@@ -11,4 +25,35 @@
   padding: 15px;
 }
 
+.section_remove_img {
+  position: relative;
+}
 
+.section_form_container {
+  align-items: flex-start;
+  display: flex;
+}
+
+.section_avatar_container {
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+.button {
+  background: rgba(0, 0, 0, 0.3);
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 24px;
+  width: 32px;
+  height: 32px;
+  top: 15px;
+  position: absolute;
+  right: 15px;
+}
+
+.img {
+  border-radius: 10px;
+  height: auto;
+  width: 100%;
+}

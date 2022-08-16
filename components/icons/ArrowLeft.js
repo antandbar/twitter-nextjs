@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react';
 
 export default function ArrowLeft(props) {
   return (
@@ -12,5 +12,5 @@ export default function ArrowLeft(props) {
         <path d="M7.5 6.497l-4 4.002 4 4M16.5 10.5h-13" />
       </g>
     </svg>
-  )
+  );
 }

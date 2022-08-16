@@ -17,3 +17,10 @@
   color: #555;
   font-size: 14px;
 }
+
+.img {
+  border-radius: 10px;
+  height: auto;
+  margin-top: 10px;
+  width: 100%;
+}

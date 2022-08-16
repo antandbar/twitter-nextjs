@@ -26,6 +26,10 @@ input {
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+nav a:hover {
+  stroke: #0099ff;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

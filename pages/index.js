@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import AppLayout from '../components/appLayout';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Button from '../components/Button';
@@ -26,7 +25,6 @@ export default function Home() {
 
   return (
     <>
-      <AppLayout>
         <section className={styles.section}>
           <Image src="/logo.png" alt="logo" width="100px" height="100px" />
           <h1 className={styles.h1}>Devter</h1>
@@ -41,7 +39,6 @@ export default function Home() {
             {user === undefined && <span>Loading...</span>}
           </div>
         </section>
-      </AppLayout>
     </>
   );
 }
