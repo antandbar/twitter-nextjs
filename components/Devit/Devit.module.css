@@ -13,10 +13,16 @@
   margin: 0;
 }
 
-.date {
+.a {
   color: #555;
   font-size: 14px;
+  text-decoration: none;
 }
+
+.a:hover {
+  text-decoration: underline;
+}
+
 
 .img {
   border-radius: 10px;
