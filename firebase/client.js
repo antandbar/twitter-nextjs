@@ -11,15 +11,7 @@ import {
 import { getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import { getAuth, GithubAuthProvider, signInWithPopup } from 'firebase/auth';
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyBCvIxu_t9I34F94922Hqj5CnucIciEkLs',
-  authDomain: 'devter-b4b4b.firebaseapp.com',
-  projectId: 'devter-b4b4b',
-  storageBucket: 'devter-b4b4b.appspot.com',
-  messagingSenderId: '37609696760',
-  appId: '1:37609696760:web:ddfc5a5b5a2a215c3dba0d',
-  measurementId: 'G-FB7ESW7SFD',
-};
+const firebaseConfig = JSON.parse(process.env.NEXT_PUBLIC_FIREBASE_CONFIG);
 
 const app = initializeApp(firebaseConfig);
 

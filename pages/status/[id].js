@@ -5,7 +5,7 @@ const DavitPage = props => {
   const router = useRouter();
   
   /* if(!props.id) return "...Loading"; */
-  if(router.isFallback) return "...Loading";
+  if(router.isFallback) return <h1>...Loading</h1>;
 
   return (
     <>
@@ -18,7 +18,7 @@ export default DavitPage;
 
 export const getStaticPaths = async () => {
   return {
-    paths: [{ params: { id: 'eY2jrmAyUVdt737MVCsY' } }],
+    paths: [],
     fallback: true,
   };
 };
