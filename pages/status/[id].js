@@ -1,9 +1,12 @@
-/* import { firestore } from "../../firebase/admin";
-import { collection, getDoc, doc } from "firebase/firestore"; */
 import Devit from '../../components/devit';
+import { useRouter } from 'next/router';
 
 const DavitPage = props => {
-  console.log(props);
+  const router = useRouter();
+  
+  /* if(!props.id) return "...Loading"; */
+  if(router.isFallback) return "...Loading";
+
   return (
     <>
       <Devit {...props} />
@@ -13,36 +16,25 @@ const DavitPage = props => {
 
 export default DavitPage;
 
-/* export const getStaticPaths = async () => {
+export const getStaticPaths = async () => {
   return {
     paths: [{ params: { id: 'eY2jrmAyUVdt737MVCsY' } }],
-    fallback: false,
+    fallback: true,
   };
 };
 
 export const getStaticProps = async (context) => {
   const { params } = context;
   const { id } = params;
-  if (firestore) {
-    const docRef = collection(firestore, "devits");
-    return getDoc(doc(docRef, id))
-      .then((doc) => {
-        const { createdAt } = doc.data();
-    
-        const props = {
-          ...doc.data(),
-          id: doc.id,
-          createdAt: +createdAt.toDate(),
-        };
-        return { props };
-      })
-      .catch(() => {
-        return { props: { } };
-      });
-  }
-}; */
+  const apiResponse = await fetch(`http://localhost:3000/api/devits/${id}`);
 
- export const getServerSideProps = async context => {
+  if (apiResponse.ok) {
+    const props = await apiResponse.json();
+    return { props };
+  }
+};
+
+/*  export const getServerSideProps = async context => {
   const { params, res } = context;
   const { id } = params;
   const apiResponse = await fetch(`http://localhost:3000/api/devits/${id}`);
@@ -52,7 +44,7 @@ export const getStaticProps = async (context) => {
     return { props };
   }
   if (res) res.writeHead(301, { Location: '/home' }).end();
-}; 
+}; */ 
 
 /* DavitPage.getInitialProps = context => {
   const { query, res } = context;
